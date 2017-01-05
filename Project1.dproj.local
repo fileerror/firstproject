@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.359,=C:\Users\Max\Desktop\Новая папка\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.640,=C:\Users\Max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.419,C:\Users\Max\Desktop\Новая папка\Project1.dproj=C:\Users\Max\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.965,=C:\Users\User\Desktop\язь\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.989,C:\Users\Max\Desktop\Новая папка\Unit1.pas=C:\Users\Max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.995,C:\Users\Max\Desktop\Новая папка\Unit1.dfm=C:\Users\Max\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.837,=C:\Users\Max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.845,=C:\Users\Max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016.11.08 12:28:17.856,C:\Users\User\Desktop\язь2\Project1.dproj=C:\Users\User\Desktop\язь\Project1.dproj</Transaction>
+    <Transaction>2016.11.08 12:29:24.943,C:\Users\User\Desktop\язь2\Unit1.dfm=C:\Users\User\Desktop\язь\Unit1.dfm</Transaction>
+    <Transaction>2016.11.08 12:29:24.943,C:\Users\User\Desktop\язь2\Unit1.pas=C:\Users\User\Desktop\язь\Unit1.pas</Transaction>
+    <Transaction>2016.11.08 12:30:35.687,C:\Users\User\Desktop\язь2\Unit2.dfm=C:\Users\User\Desktop\язь\Unit2.dfm</Transaction>
+    <Transaction>2016.11.08 12:30:35.687,C:\Users\User\Desktop\язь2\Unit2.pas=C:\Users\User\Desktop\язь\Unit2.pas</Transaction>
+    <Transaction>2016.11.08 12:30:44.190,C:\Users\User\Desktop\язь2\Unit3.pas=C:\Users\User\Desktop\язь\Unit3.pas</Transaction>
+    <Transaction>2016.11.08 12:30:44.190,C:\Users\User\Desktop\язь2\Unit3.dfm=C:\Users\User\Desktop\язь\Unit3.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
