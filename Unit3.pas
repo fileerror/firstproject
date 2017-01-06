@@ -148,6 +148,27 @@ begin
   svodhub:=l;
 end;
 
+function habrkey(a:chast):integer;
+var i,j,k:integer;
+begin
+  k:=0;
+  for I := 1 to form3.SpinEdit1.Value do begin
+    for j := 1 to form3.SpinEdit1.Value do begin
+      if a[i]*1.06>a[j] then inc(k)
+      else begin
+        k:=0;
+        break;
+      end;
+    end;
+    if k=form3.SpinEdit1.Value
+    then begin
+      break;
+    end;
+
+  end;
+  habrkey:=i;
+end;
+
 procedure TForm3.Button1Click(Sender: TObject);
 var i,j,k:integer;
 q:yaz;
@@ -163,5 +184,6 @@ begin
   lok:=analizind(s);
   idea(s);
   c:=svodhub(s);
+  k:=habrkey(c);
 end;
 end.
