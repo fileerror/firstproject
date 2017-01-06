@@ -13,6 +13,7 @@ type
     end;
     indsov= array [1..40] of indsov1;
     drob = array [1..40] of ansistring;
+    chast = array [1..40] of real;
   TForm3 = class(TForm)
     SpinEdit1: TSpinEdit;
     Label1: TLabel;
@@ -34,7 +35,7 @@ implementation
 {$R *.dfm}
 
 
-function ind(a,b:integer;s:ansistring):real;
+function ind(s:ansistring):real;
 var i,j,k:integer;
     r:double;
     sk:ansistring;
@@ -42,10 +43,9 @@ var i,j,k:integer;
     chast: array [0..50] of double;
 begin
   r:=0;
-  for I := a to b do sk:=sk+s[i];
-  q:=kbinstr(sk);
+  q:=kbinstr(s);
   for I := 0 to q[0].stolb-1 do begin
-    chast[i]:=(q[i].kol*(q[i].kol-1))/(length(sk)*(length(sk)-1));
+    chast[i]:=(q[i].kol*(q[i].kol-1))/(length(s)*(length(s)-1));
     r:=r+chast[i];
   end;
   ind:=r;
@@ -123,19 +123,45 @@ begin
   drobilka:=l;
 end;
 
+function hubind(a:drob;b:integer): real;
+var i,j,k:integer;
+    l:real;
+begin
+  l:=0;
+  for I := 1 to b do begin
+    l:=l+ind(a[i]);
+  end;
+  l:=l/b;
+  hubind:=l;
+end;
+
+function svodhub(a:ansistring): chast;
+var i,j,k:integer;
+    l:chast;
+    s:ansistring;
+begin
+  s:=a;
+  totalcleanstr(s);
+  for I := 1 to form3.SpinEdit1.Value do begin
+    l[i]:=hubind(drobilka(s,i),i);
+  end;
+  svodhub:=l;
+end;
+
 procedure TForm3.Button1Click(Sender: TObject);
 var i,j,k:integer;
 q:yaz;
 s:ansistring;
 lok: indsov;
 L:drob;
+n:real;
+c:chast;
 begin
   s:=form3.Memo1.Text;
   totalcleanstr(s);
   form3.Memo1.Text:=s;
-  form3.Memo1.Text:=s;
   lok:=analizind(s);
   idea(s);
-  l:=drobilka(s,form3.SpinEdit1.Value);
+  c:=svodhub(s);
 end;
 end.
