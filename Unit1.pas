@@ -51,7 +51,7 @@ type
   function upkeys(a:ansichar):ansichar;
 const m: set of ansichar = ['.', ',', '?', '!', ':', ';', ' ', '-', '''', ')', '(',
                         #10, #13, #0, #185, #171, #133, #147, #148, #150, #151,
-                        #187, #34];
+                        #187, #34,#96,#39];
 
 var
   Form1: TForm1;
