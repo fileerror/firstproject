@@ -68,7 +68,6 @@ var i,j,k:integer;
     l:indsov;
 begin
   s:=form3.Memo1.Text;
-  totalcleanstr(s);
   k:=length(s);
   stri[0]:=s;
   for I := 1 to form3.SpinEdit1.Value do begin
@@ -119,7 +118,6 @@ var  i,j,k:integer;
      s:ansistring;
 begin
   s:=a;
-  //totalcleanstr(s);
   for I :=1  to b do l[i]:='';
   k:=1;
   repeat
@@ -151,7 +149,6 @@ var i,j,k:integer;
     s:ansistring;
 begin
   s:=a;
-  totalcleanstr(s);
   for I := 1 to form3.SpinEdit1.Value do begin
     l[i]:=hubind(drobilka(s,i),i);
   end;
@@ -217,7 +214,6 @@ var i,k,actualcount:integer;
     textcount:yaz;
 begin
   s:=a;
-  totalcleanstr(s);
   s:=upkeystr(s);
   f:=0.0;
   textcount:=kbinstr(s);
@@ -260,12 +256,32 @@ begin
   decryptkeyENG:=f;
 end;
 
-procedure hack(a:ansistring);
-var s:ansistring;
+function decryptENG(a,b:ansistring):ansistring;
+var i,j,k,ind,posres:integer;
+    s,key,f:ansistring;
+begin
+  f:='';
+  s:=a;
+  key:=b;
+  s:=upkeystr(s);
+  key:=upkeystr(key);
+  for I := 0 to length(s)-1 do begin
+    ind:=i mod length(key);
+    posres:=ord(s[i+1])-ord(key[ind+1])+65;
+    if posres<64 then posres:=posres+26;
+    f:=f+ansichar(posres);
+  end;
+  decryptENG:=f;
+end;
+
+procedure hackENG(a:ansistring);
+var s,key:ansistring;
 begin
   s:=a;
+  key:=decryptkeyENG(s,habrkey(svodhub(s)));
+  form3.Memo1.Text:=decryptENG(s,key);
   form3.Memo1.Lines.Add('*******************************');
-  form3.Memo1.Lines.Add('Key:'+decryptkeyENG(s,habrkey(svodhub(s))));
+  form3.Memo1.Lines.Add('Key:'+key);
 end;
 
 procedure TForm3.Button1Click(Sender: TObject);
@@ -278,7 +294,7 @@ n,p:real;
 c:chast;
 begin
   s:=form3.Memo1.Text;
-  hack(s);
+  hackENG(s);
 end;
 procedure TForm3.Button2Click(Sender: TObject);
 var i:integer;
